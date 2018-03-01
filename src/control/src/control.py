@@ -6,6 +6,25 @@ import os, rospkg
 from sensor_msgs.msg import JointState
 from std_msgs.msg import Header
 import rospy
+
+
+class virtual_impedance:
+    def __init__(self,mass,spring,damper):
+        self.mass = mass
+        self.spring = spring
+        self.damper = damper
+        self.dis = np.array([0.0,0.0,0.0]) #displacement
+        self.velo = np.array([0.0,0.0,0.0]) #velocity
+        self.acc = np.array([0.0,0.0,0.0]) #accerelation
+        
+    def run(self,force,dt):
+        _force = np.subtract(force, np.add(np.multiply(self.spring,self.dis), np.multiply(self.damper,self.velo)) )#will change to force input
+        self.acc = _force/self.mass
+        self.velo += self.acc*dt
+        self.dis += self.velo*dt 
+        return self.dis
+
+
 #initialize ros node
 pub = rospy.Publisher('joint_states', JointState, queue_size=10)
 rospy.init_node('joint_state_publisher')
@@ -20,13 +39,8 @@ my_chain = ikpy.chain.Chain.from_urdf_file(script_path)
 
 #initialize stuffs
 
-mass = 3.0
-spring = 15.0
-damper = 0.5
+VID = virtual_impedance(3.0,15.0,0.5)
 
-dis = np.array([0.0,0.0,0.0]) #displacement
-velo = np.array([0.0,0.0,0.0]) #velocity
-acc = np.array([0.0,0.0,0.0]) #accerelation
 force = np.array([0.0,3.0,3.0])
 
 
@@ -64,11 +78,7 @@ for i in range(iteration):
     t = time.time()
 
     #virtual impedance
-    _force = np.subtract(force, np.add(np.multiply(spring,dis), np.multiply(damper,velo)))#will change to force input
-    acc = _force/mass
-    velo += acc*dt
-    dis += velo*dt 
-    displace[i] = dis 
+    dis = VID.run(force,dt)
     
     target_pos = target_vector + dis
     target_frame = np.eye(4)
