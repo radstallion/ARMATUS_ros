@@ -1,0 +1,4 @@
+kuka_bot
+/home/radstal/ws_armatus/devel/.private/kuka_bot/lib/pkgconfig/kuka_bot.pc /home/radstal/ws_armatus/devel/lib/pkgconfig/kuka_bot.pc
+/home/radstal/ws_armatus/devel/.private/kuka_bot/share/kuka_bot/cmake/kuka_botConfig.cmake /home/radstal/ws_armatus/devel/share/kuka_bot/cmake/kuka_botConfig.cmake
+/home/radstal/ws_armatus/devel/.private/kuka_bot/share/kuka_bot/cmake/kuka_botConfig-version.cmake /home/radstal/ws_armatus/devel/share/kuka_bot/cmake/kuka_botConfig-version.cmake

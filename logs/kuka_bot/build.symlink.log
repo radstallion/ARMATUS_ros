@@ -1,0 +1,3 @@
+Symlinking /home/radstal/ws_armatus/devel/lib/pkgconfig/kuka_bot.pc
+Symlinking /home/radstal/ws_armatus/devel/share/kuka_bot/cmake/kuka_botConfig.cmake
+Symlinking /home/radstal/ws_armatus/devel/share/kuka_bot/cmake/kuka_botConfig-version.cmake

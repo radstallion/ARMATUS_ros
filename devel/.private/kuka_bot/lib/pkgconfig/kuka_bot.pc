@@ -1,0 +1,8 @@
+prefix=/home/radstal/ws_armatus/devel/.private/kuka_bot
+
+Name: kuka_bot
+Description: Description of kuka_bot
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/radstal/ws_armatus/devel/.private/kuka_bot/lib 
+Requires: 

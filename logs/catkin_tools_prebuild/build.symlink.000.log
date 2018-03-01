@@ -1,0 +1,8 @@
+Symlinking /home/radstal/ws_armatus/devel/./setup.sh
+Symlinking /home/radstal/ws_armatus/devel/./setup.zsh
+Symlinking /home/radstal/ws_armatus/devel/./setup.bash
+Symlinking /home/radstal/ws_armatus/devel/./_setup_util.py
+Symlinking /home/radstal/ws_armatus/devel/./env.sh
+Symlinking /home/radstal/ws_armatus/devel/lib/pkgconfig/catkin_tools_prebuild.pc
+Symlinking /home/radstal/ws_armatus/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake
+Symlinking /home/radstal/ws_armatus/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake

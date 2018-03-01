@@ -1,0 +1,3 @@
+Symlinking /home/radstal/ws_armatus/devel/lib/pkgconfig/KUKA.pc
+Symlinking /home/radstal/ws_armatus/devel/share/KUKA/cmake/KUKAConfig.cmake
+Symlinking /home/radstal/ws_armatus/devel/share/KUKA/cmake/KUKAConfig-version.cmake

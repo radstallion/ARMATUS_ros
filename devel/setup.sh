@@ -1,0 +1,1 @@
+/home/radstal/ws_armatus/devel/.private/catkin_tools_prebuild/setup.sh

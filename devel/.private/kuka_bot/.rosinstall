@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/radstal/ws_armatus/devel/.private/kuka_bot/setup.sh

@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/radstal/ws_armatus/devel/.private/KUKA/setup.sh

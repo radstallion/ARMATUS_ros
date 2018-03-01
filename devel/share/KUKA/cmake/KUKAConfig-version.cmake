@@ -1,0 +1,1 @@
+/home/radstal/ws_armatus/devel/.private/KUKA/share/KUKA/cmake/KUKAConfig-version.cmake
