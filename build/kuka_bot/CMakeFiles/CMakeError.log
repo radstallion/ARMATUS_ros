@@ -1,22 +1,22 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/radstal/ws_armatus/build/kuka_bot/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_53682/fast"
-/usr/bin/make -f CMakeFiles/cmTC_53682.dir/build.make CMakeFiles/cmTC_53682.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_bdffe/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bdffe.dir/build.make CMakeFiles/cmTC_bdffe.dir/build
 make[1]: Entering directory '/home/radstal/ws_armatus/build/kuka_bot/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_53682.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_53682.dir/CheckSymbolExists.c.o   -c /home/radstal/ws_armatus/build/kuka_bot/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_53682
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53682.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_53682.dir/CheckSymbolExists.c.o  -o cmTC_53682 -rdynamic 
-CMakeFiles/cmTC_53682.dir/CheckSymbolExists.c.o: In function `main':
+Building C object CMakeFiles/cmTC_bdffe.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_bdffe.dir/CheckSymbolExists.c.o   -c /home/radstal/ws_armatus/build/kuka_bot/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_bdffe
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bdffe.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_bdffe.dir/CheckSymbolExists.c.o  -o cmTC_bdffe -rdynamic 
+CMakeFiles/cmTC_bdffe.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_53682.dir/build.make:97: recipe for target 'cmTC_53682' failed
-make[1]: *** [cmTC_53682] Error 1
+CMakeFiles/cmTC_bdffe.dir/build.make:97: recipe for target 'cmTC_bdffe' failed
+make[1]: *** [cmTC_bdffe] Error 1
 make[1]: Leaving directory '/home/radstal/ws_armatus/build/kuka_bot/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_53682/fast' failed
-make: *** [cmTC_53682/fast] Error 2
+Makefile:126: recipe for target 'cmTC_bdffe/fast' failed
+make: *** [cmTC_bdffe/fast] Error 2
 
 File /home/radstal/ws_armatus/build/kuka_bot/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -36,20 +36,20 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/radstal/ws_armatus/build/kuka_bot/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b9f26/fast"
-/usr/bin/make -f CMakeFiles/cmTC_b9f26.dir/build.make CMakeFiles/cmTC_b9f26.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_24c3b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_24c3b.dir/build.make CMakeFiles/cmTC_24c3b.dir/build
 make[1]: Entering directory '/home/radstal/ws_armatus/build/kuka_bot/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_b9f26.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_b9f26.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_b9f26
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9f26.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_b9f26.dir/CheckFunctionExists.c.o  -o cmTC_b9f26 -rdynamic -lpthreads 
+Building C object CMakeFiles/cmTC_24c3b.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_24c3b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_24c3b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_24c3b.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_24c3b.dir/CheckFunctionExists.c.o  -o cmTC_24c3b -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_b9f26.dir/build.make:97: recipe for target 'cmTC_b9f26' failed
-make[1]: *** [cmTC_b9f26] Error 1
+CMakeFiles/cmTC_24c3b.dir/build.make:97: recipe for target 'cmTC_24c3b' failed
+make[1]: *** [cmTC_24c3b] Error 1
 make[1]: Leaving directory '/home/radstal/ws_armatus/build/kuka_bot/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_b9f26/fast' failed
-make: *** [cmTC_b9f26/fast] Error 2
+Makefile:126: recipe for target 'cmTC_24c3b/fast' failed
+make: *** [cmTC_24c3b/fast] Error 2
 
 
