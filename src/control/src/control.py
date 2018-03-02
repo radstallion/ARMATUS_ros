@@ -25,7 +25,7 @@ class virtual_impedance:
         return self.dis
 
 class joint_publisher:
-    def __init__(class,joint_name=['q1', 'q2', 'q3', 'q4', 'q5', 'q6'],name='joint_state_publisher'):
+    def __init__(self,joint_name=['q1', 'q2', 'q3', 'q4', 'q5', 'q6'],name='joint_state_publisher'):
         self.pub = rospy.Publisher('joint_states', JointState, queue_size=10)
         rospy.init_node(name)
         self.message = JointState()
@@ -87,7 +87,7 @@ for i in range(iteration):
 
 
     #######execute to robot here#######
-    pub.send(ros_joint_states)
+    pub.send(joint)
     ###################################
 
     real_frame = my_chain.forward_kinematics(joints[i])
