@@ -24,10 +24,19 @@ class virtual_impedance:
         self.dis += self.velo*dt 
         return self.dis
 
+class joint_publisher:
+    def __init__(class,joint_name=['q1', 'q2', 'q3', 'q4', 'q5', 'q6'],name='joint_state_publisher'):
+        self.pub = rospy.Publisher('joint_states', JointState, queue_size=10)
+        rospy.init_node(name)
+        self.message = JointState()
+        self.message.header = Header()
+        self.message.name = joint_name
 
-#initialize ros node
-pub = rospy.Publisher('joint_states', JointState, queue_size=10)
-rospy.init_node('joint_state_publisher')
+    def send(self,joints):
+        self.message.header.stamp = rospy.Time.now()
+        self.message.position = joints[1:]
+        self.pub.publish(self.message)
+        
 
 
 
@@ -40,8 +49,8 @@ my_chain = ikpy.chain.Chain.from_urdf_file(script_path)
 #initialize stuffs
 
 VID = virtual_impedance(3.0,15.0,0.5)
+pub = joint_publisher()
 
-force = np.array([0.0,3.0,3.0])
 
 
 #starting pose
@@ -50,22 +59,12 @@ target_frame = np.eye(4)
 target_frame[:3, 3] = target_vector
 
 joint = my_chain.inverse_kinematics(target_frame)
-
-
-ros_joint_states = JointState()
-ros_joint_states.header = Header()
-ros_joint_states.header.stamp = rospy.Time.now()
-ros_joint_states.position = joint[1:]
-ros_joint_states.name = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6']
-
-pub.publish(ros_joint_states)
-
-
 real_frame = my_chain.forward_kinematics(joint)
 
 starting_pos = real_frame[:3, 3]
 
 #simulation configuration
+force = np.array([0.0,3.0,3.0])
 dt = 0.132 # 132ms
 iteration = 10000
 displace = np.zeros([iteration,3])
@@ -85,14 +84,10 @@ for i in range(iteration):
     target_frame[:3, 3] = target_pos
     joint = my_chain.inverse_kinematics(target_frame,joint)
     joints[i] = joint
-    ros_joint_states.header = Header()
-    ros_joint_states.header.stamp = rospy.Time.now()
-    ros_joint_states.position = joint[1:]
-    ros_joint_states.name = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6']
-    pub.publish(ros_joint_states)
+
 
     #######execute to robot here#######
-
+    pub.send(ros_joint_states)
     ###################################
 
     real_frame = my_chain.forward_kinematics(joints[i])
