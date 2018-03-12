@@ -1,0 +1,8 @@
+prefix=/home/radstal/ws_armatus/devel/.private/armatus05
+
+Name: armatus05
+Description: Description of armatus05
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/radstal/ws_armatus/devel/.private/armatus05/lib 
+Requires: 

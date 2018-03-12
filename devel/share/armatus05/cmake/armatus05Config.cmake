@@ -1,0 +1,1 @@
+/home/radstal/ws_armatus/devel/.private/armatus05/share/armatus05/cmake/armatus05Config.cmake

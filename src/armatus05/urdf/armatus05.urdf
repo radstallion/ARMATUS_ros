@@ -1,0 +1,308 @@
+<robot
+  name="armatus05">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0441035207367266 0.133129136439465 0.120343299252624"
+        rpy="0 0 0" />
+      <mass
+        value="0.468691906928147" />
+      <inertia
+        ixx="0.000175050143229992"
+        ixy="0.000150316849782907"
+        ixz="-0.000108696774317794"
+        iyy="0.000258917610154074"
+        iyz="8.15383088186357E-05"
+        izz="0.00031298015583052" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armatus05/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armatus05/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="-0.0895141673370674 2.57477610537959E-07 0.0658764774104169"
+        rpy="0 0 0" />
+      <mass
+        value="0.645673307184909" />
+      <inertia
+        ixx="0.000154588451666726"
+        ixy="-1.47066835651919E-08"
+        ixz="0.000246559051749186"
+        iyy="0.00054844629959003"
+        iyz="9.18076963914551E-09"
+        izz="0.000393857849027755" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armatus05/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armatus05/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="q1"
+    type="fixed">
+    <origin
+      xyz="0.0026164 -0.16132 0.11812"
+      rpy="1.5708 0.7854 -6.123E-17" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="3.07676155664183E-07 0.0564202422369583 -0.0656965211506138"
+        rpy="0 0 0" />
+      <mass
+        value="0.499147117919005" />
+      <inertia
+        ixx="0.00155927643305349"
+        ixy="7.57179845178887E-09"
+        ixz="1.80871403006569E-08"
+        iyy="0.00104901305996136"
+        iyz="-0.000649128741932588"
+        izz="0.000510263419661247" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armatus05/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armatus05/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="q2"
+    type="continuous">
+    <origin
+      xyz="0 0 0.155"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="-0.000961128611003725 -0.232406021110969 -0.111290357967639"
+        rpy="0 0 0" />
+      <mass
+        value="0.674622622643783" />
+      <inertia
+        ixx="0.0208988036242029"
+        ixy="-8.32679702380219E-05"
+        ixz="-6.52695746299325E-06"
+        iyy="0.000519298638674693"
+        iyz="-0.00157969424138807"
+        izz="0.0203801885198768" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armatus05/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armatus05/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="q3"
+    type="continuous">
+    <origin
+      xyz="0 0.026766 -0.0053396"
+      rpy="-0.78539 0.0029116 -3.1387" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="0.00870075325055064 -0.188619113469937 0.0364614707390779"
+        rpy="0 0 0" />
+      <mass
+        value="0.479696419916218" />
+      <inertia
+        ixx="0.0177109735880122"
+        ixy="0.000914809682286592"
+        ixz="4.78363852362251E-05"
+        iyy="0.000513995152654501"
+        iyz="-0.00103667080993815"
+        izz="0.0174531008911726" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armatus05/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armatus05/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="q4"
+    type="continuous">
+    <origin
+      xyz="-0.0017294 -0.42 -0.0445"
+      rpy="3.1416 2.1291E-27 -3.1416" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="linkeff">
+    <inertial>
+      <origin
+        xyz="2.44249065417534E-15 0.0530372351438003 -5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0294646479378636" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armatus05/meshes/linkeff.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armatus05/meshes/linkeff.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="eff"
+    type="fixed">
+    <origin
+      xyz="0.018773 -0.43043 0.025"
+      rpy="1.5987E-14 0.31793 -1.5667" />
+    <parent
+      link="link4" />
+    <child
+      link="linkeff" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>

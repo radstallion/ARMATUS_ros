@@ -69,35 +69,35 @@ class robotIK:
 
 #initialize stuffs
 
-VID = virtual_impedance(3.0,15.0,0.5)
-pub = joint_publisher()
+VID = virtual_impedance(3.0,20.0,0.5)
+pub = joint_publisher(joint_name=['q1', 'q2', 'q3', 'q4', 'eff'])
 
 # URDFIK
 rp = rospkg.RosPack()
-urdf_path = os.path.join(rp.get_path("control"), "urdf", "kuka_bot.urdf")
-robot = robotIK(urdf_path,[ 0, 0.25, 0.4])
+urdf_path = os.path.join(rp.get_path("control"), "urdf", "armatus05.urdf")
+robot = robotIK(urdf_path,[ -0.2, -0.4, -0.5])
 joint = robot.current_joint
 
 
 #simulation configuration
-force = np.array([3.0,3.0,3.0])
+force = np.array([3.0,0.0,0])
 dt = 0.132 # 132ms
 iteration = 1000
 
 # the loop
+if __name__ == "__main__":
+    for i in range(iteration):
+        t = time.time()
 
-for i in range(iteration):
-    t = time.time()
+        #virtual impedance
+        dis = VID.run(force,dt)
 
-    #virtual impedance
-    dis = VID.run(force,dt)
+        joint = robot.inverseIK(robot.home + dis,joint)
 
-    joint = robot.inverseIK(robot.home + dis,joint)
+        #######execute to robot here#######
+        pub.send(joint)
+        ###################################
 
-    #######execute to robot here#######
-    pub.send(joint)
-    ###################################
+        dt = time.time() - t
 
-    dt = time.time() - t
-
-    print("total elapse time : ",dt )
+        print("total elapse time : ",dt )
